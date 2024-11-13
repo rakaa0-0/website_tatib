@@ -1,23 +1,22 @@
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+import { supabase } from './supabaseClient';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { username, password } = req.body;
 
+    // Validasi input
+    if (!username || !password) {
+      return res.status(400).json({ message: 'Username dan password harus diisi' });
+    }
+
     try {
       // Ambil user dari database berdasarkan username
       const { data: user, error } = await supabase
         .from('tatib')
-        .select('id, password')
+        .select('username, password')
         .eq('username', username)
         .single();
 
-
-        
       if (error) {
         throw new Error('Database error saat mencari pengguna');
       }

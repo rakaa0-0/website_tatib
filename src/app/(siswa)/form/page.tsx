@@ -1,4 +1,4 @@
-import SiswaPage from "@/components/FormSiswa";
+import SiswaPage from "@/components/Form/FormSiswa";
 import Image from "next/image";
 
 const FormPage = () => {
