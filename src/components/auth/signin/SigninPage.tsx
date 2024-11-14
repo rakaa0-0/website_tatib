@@ -2,16 +2,33 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation'; // Import useRouter from next/router
+import { useRouter } from 'next/navigation'; 
 
 export default function SigninPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-  const router = useRouter(); // Initialize useRouter
+  const [errors, setErrors] = useState({ username: '', password: '' });
+  const router = useRouter(); 
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    
+    setErrors({ username: '', password: '' });
+    setMessage('');
+
+    
+    if (!username) {
+      setErrors(prevErrors => ({ ...prevErrors, username: 'Username wajib diisi' }));
+    }
+    if (!password) {
+      setErrors(prevErrors => ({ ...prevErrors, password: 'Password wajib diisi' }));
+    }
+    if (!username || !password) {
+      return;
+    }
+
     const res = await fetch('./api/login', {
       method: 'POST',
       headers: {
@@ -20,12 +37,13 @@ export default function SigninPage() {
       body: JSON.stringify({ username, password }),
     });
     const data = await res.json();
+
+    if (res.ok) { 
     
-    if (res.ok) { // Check if the response is OK (status code 200-299)
-      // Redirect to the desired page after successful login
-      router.push('./dashboard'); // Change '/dashboard' to your desired route
+      router.push('./dashboard'); 
     } else {
-      setMessage(data.message); // Show error message if login fails
+      setMessage(data.message); 
+      setErrors({ username: data.message.includes('Username') ? 'Username salah' : '', password: data.message.includes('Password') ? 'Password salah' : '' });
     }
   };
 
@@ -56,10 +74,12 @@ export default function SigninPage() {
                 name="username"
                 type="text"
                 placeholder="Username"
-                required
-                className="block w-full rounded-md border-2 border-[#4C56AA] px-2 py-2.5 text-gray-900 shadow-sm outline-none focus:border-[#4C56AA] focus:ring-1 focus:ring-[#4C56AA] placeholder:text-[#DBDEF5] sm:text-sm sm:leading-6"
+                className={`block w-full rounded-md border-2 px-2 py-2.5 text-gray-900 shadow-sm outline-none 
+                  ${errors.username ? 'border-red-500' : 'border-[#4C56AA]'} 
+                  focus:border-[#4C56AA] focus:ring-1 focus:ring-[#4C56AA] placeholder:text-[#DBDEF5] sm:text-sm sm:leading-6`}
                 onChange={(e) => setUsername(e.target.value)}
               />
+              {errors.username && <p className="text-red-500 text-sm mt-1">{errors.username}</p>}
             </div>
 
             <div>
@@ -68,10 +88,12 @@ export default function SigninPage() {
                 name="password"
                 type="password"
                 placeholder="Password"
-                required
-                className="block w-full rounded-md border-2 border-[#4C56AA] px-2 py-2.5 text-gray-900 shadow-sm outline-none focus:border-[#4C56AA] focus:ring-1 focus:ring-[#4C56AA] placeholder:text-[#DBDEF5] sm:text-sm sm:leading-6"
+                className={`block w-full rounded-md border-2 px-2 py-2.5 text-gray-900 shadow-sm outline-none 
+                  ${errors.password ? 'border-red-500' : 'border-[#4C56AA]'} 
+                  focus:border-[#4C56AA] focus:ring-1 focus:ring-[#4C56AA] placeholder:text-[#DBDEF5] sm:text-sm sm:leading-6`}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
             </div>
 
             <div>

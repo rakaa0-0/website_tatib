@@ -3,25 +3,22 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
 
-// Define the type of each teacher object
 type Teacher = {
   nama_lengkap: string;
 };
 
 const DaftarGuruTatib = () => {
-  const [guru, setGuru] = useState<Teacher[]>([]); // Specify that guru is an array of Teacher objects
-
-  // Fetch data from Supabase to populate the "Guru Bidang Diklat" options
+  const [guru, setGuru] = useState<Teacher[]>([]); 
   useEffect(() => {
     const fetchGuru = async () => {
       const { data, error } = await supabase
-        .from('guru') // Replace 'teachers' with your actual table name in Supabase
-        .select('nama_lengkap'); // Replace 'nama_lengkap' with the actual column name for the teacher's name
+        .from('guru') 
+        .select('nama_lengkap'); 
 
       if (error) {
         console.error('Error fetching teachers:', error);
       } else if (data) {
-        setGuru(data); // Set the fetched data to state
+        setGuru(data); 
       }
     };
 
@@ -38,7 +35,7 @@ const DaftarGuruTatib = () => {
         name="izin"
         className="rounded-xl w-full py-3 pl-4 text-[#8F8F8F] bg-white leading-tight focus:outline-none focus:shadow-outline"
       >
-        <option value="" label="Pilih Salah Satu" disabled></option>
+        <option value="" label="Pilih Salah Satu"></option>
         {guru.map((guru, index) => (
           <option key={index} value={guru.nama_lengkap}>
             {guru.nama_lengkap}
@@ -55,7 +52,7 @@ const DaftarGuruTatib = () => {
           name="tatib"
           className="rounded-xl w-full py-3 pl-4 text-[#8F8F8F] bg-white leading-tight focus:outline-none focus:shadow-outline"
         >
-          <option value="" label="Pilih Salah Satu" disabled></option>
+          <option value="" label="Pilih Salah Satu"></option>
           <option value="">Sulaimah, S.PdI</option>
           <option value="">Ach. Cholis M. M.PdI</option>
           <option value="">Salwa Erisa, S.Pd</option>

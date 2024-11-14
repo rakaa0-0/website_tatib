@@ -25,3 +25,26 @@ body {
 .text {
   color: #25318D;
 }
+
+.custom-select {
+  appearance: none;
+  background: #F0F0F0;
+  border: 1px solid #8F8F8F;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  color: #8F8F8F;
+}
+
+.custom-select:focus {
+  border-color: #4C56AA; /* Border color biru */
+  background-color: #EFF0FB; /* Background color biru muda */
+  color: #4C56AA; /* Text color biru */
+  outline: none;
+}
+
+.custom-select option:checked {
+  background-color: #4C56AA; /* Background color biru untuk opsi yang dipilih */
+  color: white;
+}
+

@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { getIzinHariIni, getTotalIzin } from '../services/izinServices'; // Pastikan path ini benar
-
+import { getIzinHariIni, getTotalIzin } from '../services/izinServices'; 
 const DashboardPage = () => {
   const [izinHariIni, setIzinHariIni] = useState(0);
   const [totalIzin, setTotalIzin] = useState(0);
@@ -21,7 +20,6 @@ const DashboardPage = () => {
 
   return (
     <div className="rounded-2xl bg-white p-2 flex-1">
-      {/* izin hari ini */}
       <div className="m-4 border-0.5 border-[#5F6CD5] rounded-lg">
         <div className="mt-4">
           <Link
@@ -39,7 +37,6 @@ const DashboardPage = () => {
           </Link>
         </div>
       </div>
-      {/* rekap izin */}
       <div className="m-4 border-0.5 border-[#5F6CD5] rounded-lg">
         <div className="mt-4">
           <Link

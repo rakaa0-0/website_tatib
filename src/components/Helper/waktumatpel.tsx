@@ -16,7 +16,7 @@ const WaktuMatpel = ({ OnAwalChange, OnAkhirChange }: WaktuMatpelProps) => {
           id="jamKeAwal"
           name="jamKeAwal"
           className="rounded-lg w-full py-3 pl-4 mr-4 text-[#8F8F8F] bg-[#F0F0F0] leading-tight focus:outline-none focus:shadow-outline"
-          onChange={(e) => OnAwalChange(e.target.value)} // Call the function passed as prop
+          onChange={(e) => OnAwalChange(e.target.value)} 
         >
           <option value="1 (07.00-07.45)">1 (07.00-07.45)</option>
           <option value="2 (07.45-08.30)">2 (07.45-08.30)</option>
@@ -36,7 +36,7 @@ const WaktuMatpel = ({ OnAwalChange, OnAkhirChange }: WaktuMatpelProps) => {
           id="jamKeAkhir"
           name="jamKeAkhir"
           className="rounded-lg w-full py-3 pl-4 ml-4 text-[#8F8F8F] bg-[#F0F0F0] leading-tight focus:outline-none focus:shadow-outline"
-          onChange={(e) => OnAkhirChange(e.target.value)} // Call the function passed as prop
+          onChange={(e) => OnAkhirChange(e.target.value)} 
         >
           <option value="1 (07.00-07.45)">1 (07.00-07.45)</option>
           <option value="2 (07.45-08.30)">2 (07.45-08.30)</option>

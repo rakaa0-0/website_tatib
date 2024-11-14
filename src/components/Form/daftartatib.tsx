@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from './supabaseClient';
 
-// Define the type of each teacher object
+
 type Teacher = {
   nama_lengkap: string;
 };
@@ -41,9 +41,9 @@ const DaftarGuruTatib = ({ onGuruChange, onTatibChange }: DaftarGuruTatibProps) 
         id="guru"
         name="guru"
         className="rounded-xl w-full py-3 pl-4 text-[#8F8F8F] bg-white leading-tight focus:outline-none focus:shadow-outline"
-        onChange={(e) => onGuruChange(e.target.value)} // Add onChange handler
+        onChange={(e) => onGuruChange(e.target.value)} 
       >
-        <option value="" label="Pilih Salah Satu" disabled></option>
+        <option value="" label="Pilih Salah Satu"></option>
         {guru.map((guru, index) => (
           <option key={index} value={guru.nama_lengkap}>
             {guru.nama_lengkap}
@@ -59,9 +59,9 @@ const DaftarGuruTatib = ({ onGuruChange, onTatibChange }: DaftarGuruTatibProps) 
           id="tatib"
           name="tatib"
           className="rounded-xl w-full py-3 pl-4 text-[#8F8F8F] bg-white leading-tight focus:outline-none focus:shadow-outline"
-          onChange={(e) => onTatibChange(e.target.value)} // Add onChange handler
+          onChange={(e) => onTatibChange(e.target.value)} 
         >
-          <option value="" label="Pilih Salah Satu" disabled></option>
+          <option value="" label="Pilih Salah Satu"></option>
           <option value="Sulaimah, S.PdI">Sulaimah, S.PdI</option>
           <option value="Ach. Cholis M. M.PdI">Ach. Cholis M. M.PdI</option>
           <option value="Salwa Erisa, S.Pd">Salwa Erisa, S.Pd</option>
