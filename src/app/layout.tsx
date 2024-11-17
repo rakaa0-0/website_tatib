@@ -9,7 +9,7 @@ const notoSans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Surat Izin Siswa",
+  title: "Perizinan Siswa",
   description: "Tata Tertib SMK Negeri 04 Malang",
 };
 

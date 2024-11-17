@@ -48,8 +48,8 @@ export default function SigninPage() {
   };
 
   return (
-    <div className="flex max-h-screen">
-      <div className="flex-1 flex flex-col px-6 py-5 lg:px-8">
+    <div className="flex max-h-screen ">
+      <div className="flex-1 flex flex-col align-items-center px-6 py-5 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:items-center">
           <Image
             className="h-14 w-auto"
@@ -99,7 +99,7 @@ export default function SigninPage() {
             <div>
               <button
                 type="submit"
-                className="mt-10 flex w-full justify-center rounded-xl bg-[#5662C2] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                className="mt-10 flex w-full justify-center rounded-md bg-[#5662C2] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               >
                 Masuk
               </button>
@@ -112,7 +112,7 @@ export default function SigninPage() {
         <Image
           className="h-full w-full object-cover"
           src="/banner_sekolah.svg"
-          alt="School building"
+          alt=""
           width={1000}
           height={1000}
         />

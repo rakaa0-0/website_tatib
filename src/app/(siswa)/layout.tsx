@@ -1,4 +1,3 @@
-import Menu from "@/components/Sidebar/Sidebar";
 import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
 
@@ -22,7 +21,6 @@ export default function FormLayout({
           />
           <span className="hidden lg:block text-[#434D97] font-semibold">IZIN SISWA</span>
           </div>
-          <Menu/>
         </div>
         {/* RIGHT */}
         <div className="w-[86%] md:w-[92%] lg-w[84%] xl:w[86%]">
