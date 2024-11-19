@@ -53,7 +53,7 @@ export default function SigninPage() {
         <div className="sm:mx-auto sm:w-full sm:items-center">
           <Image
             className="h-14 w-auto"
-            src="/Logosmk.svg"
+            src="/icons/sidebar.svg"
             alt="TATA TERTIB Logo"
             width={40}
             height={40}
@@ -111,7 +111,7 @@ export default function SigninPage() {
       <div className="hidden lg:block lg:w-1/2">
         <Image
           className="h-full w-full object-cover"
-          src="/banner_sekolah.svg"
+          src="/images/banner-login.svg"
           alt=""
           width={1000}
           height={1000}
