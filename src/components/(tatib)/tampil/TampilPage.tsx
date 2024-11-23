@@ -6,6 +6,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Sidebar,
   SidebarContent,
@@ -22,9 +30,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { SelectItem, SelectTrigger } from "@radix-ui/react-select";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectValue } from "@/components/ui/select";
+
 
 export default function DashboardPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -136,7 +142,7 @@ export default function DashboardPage() {
 
           {/* Main Content Area */}
           <div className="p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <div className=" gap-6">
               {/* Permission Table */}
               <div className="lg:col-span-3">
                 <div className="container mx-auto px-8 py-[2.2rem]">
@@ -481,7 +487,14 @@ export default function DashboardPage() {
                 {/* end */}
                 <Card className="mb-6 border-none shadow-none"></Card>
                 {/* second */}
-               
+                <Card className="mb-6 border-none shadow-none">
+                  <CardHeader>
+                    <CardTitle className="text-sm font-medium"></CardTitle>
+                    <div className="text-left mb-6">
+                      <div className="text-[11px] flex justify-between font-semibold text-[#5F6CD5] left-0"></div>
+                    </div>
+                  </CardHeader>
+                </Card>
                 {/* end */}
               </div>
             </div>

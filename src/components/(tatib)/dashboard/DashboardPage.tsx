@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { supabase } from "./supabaseClient";
 import {
   Dialog,
@@ -14,7 +15,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
 import {
   Sidebar,
   SidebarContent,
@@ -357,7 +357,7 @@ export default function DashboardPage() {
                       <div className="text-2xl font-medium">{loading ? "Loading..." : monthlyCount} siswa</div>
                       <div className="text-[11px] flex justify-between font-semibold text-[#5F6CD5]">
                         Melakukan izin bulan ini
-                        <Link href={""}>
+                        <Link href={"https://docs.google.com/spreadsheets/d/1ZtdQOiuWgbJg4tFYW6J-6kVBL7VvWNGXFy_XIGsSrmE/edit?hl=id&gid=0#gid=0"}>
                           <ChevronRight className="w-4 h-4 ml-1 bg-[#5F6CD5] rounded-full text-white" />
                         </Link>
                       </div>

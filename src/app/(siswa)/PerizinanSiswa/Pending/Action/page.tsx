@@ -1,10 +1,10 @@
-import DitolakPage from '@/components/helper/DitolakPage'
+import DisetujuiPage from '@/components/helper/DisetujuiPage'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-        <DitolakPage />
+        <DisetujuiPage />
     </div>
   )
 }

@@ -125,7 +125,7 @@ export default function FormPage() {
       !selectedTatib
     ) {
       setErrorMessage(
-        "Beberapa data wajib tidak lengkap. Pastikan nama lengkap, izin, tanggal, guru, dan petugas tatib terisi."
+        "Beberapa data wajib diisi. Pastikan nama lengkap, izin, tanggal, guru, dan petugas tatib terisi."
       );
       setShowErrorPopup(true);
       return;
@@ -513,7 +513,7 @@ export default function FormPage() {
           </div>
           <div className="mt-4  flex justify-center">
             <Button
-              className="px-10 flex mx-auto"
+              className="px-10 flex mx-auto bg-[#E6F6EF] hover:bg-[#00A25E] text-[#00A25E] hover:text-[#E6F6EF]"
               onClick={() => {
                 setShowSuccessPopup(false);
                 window.location.href = "/PerizinanSiswa/Pending";
@@ -543,7 +543,7 @@ export default function FormPage() {
             <Button
               onClick={() => setShowErrorPopup(false)}
               variant="destructive"
-              className="px-10 flex mx-auto"
+              className="px-10 flex mx-auto bg-[#FDE8EA] hover:bg-[#E71D31] text-[#E71D31] hover:text-[#FDE8EA]"
             >
               OK
             </Button>

@@ -29,7 +29,7 @@ export default function DisetujuiPage() {
             </div>
             {/* Loading Text */}
             <p className="text-base font-semibold text-black">
-              Formulir anda berhasil dikirim dan disetujui
+              Formulir anda disetujui
             </p>
             <p className="text-sm text-black mt-2">Silahkan konfirmasi dengan guru tatib terkait.</p>
           </CardContent>
